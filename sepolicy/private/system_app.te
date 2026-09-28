@@ -1,0 +1,5 @@
+# Allow IFAAService access to Mlipay HAL (dropped - mlipay unused)
+# hal_client_domain(system_app, hal_mlipay)
+
+# NOTE: the sysfs_battery_supply probe allow lives in vendor/system_app.te;
+# the type is not visible to system_ext policy across the treble boundary.

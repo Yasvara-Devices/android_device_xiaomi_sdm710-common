@@ -1,0 +1,11 @@
+# LiveDisplay sysfs HAL domain policy. Vendored from
+# device/lineage/sepolicy/common/vendor/hal_lineage_livedisplay_sysfs.te
+# (not included on InfinityX). Types are declared in dynamic/dontaudit.te.
+hal_server_domain(hal_lineage_livedisplay_sysfs, hal_lineage_livedisplay)
+
+init_daemon_domain(hal_lineage_livedisplay_sysfs)
+
+binder_call(hal_lineage_livedisplay_sysfs, servicemanager)
+
+# Grant access over LiveDisplay tuneables
+allow hal_lineage_livedisplay_sysfs sysfs_livedisplay_tuneable:file rw_file_perms;

@@ -1,0 +1,3 @@
+# SystemUI reads UVC camera props (audit-driven, neverallow-protected, so
+# silence instead of allow; falls back to default)
+dontaudit platform_app usb_uvc_enabled_prop:file rw_file_perms;

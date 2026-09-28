@@ -1,0 +1,7 @@
+# Allow to create and access own vendor data
+allow hal_nfc_default nfc_vendor_data_file:dir create_dir_perms;
+allow hal_nfc_default nfc_vendor_data_file:file create_file_perms;
+
+# Probe for (absent) embedded secure element (audit-driven, neverallow-
+# protected, so silence instead of allow; eSE lookup fails gracefully)
+dontaudit hal_nfc_default hal_secure_element_hwservice:hwservice_manager find;

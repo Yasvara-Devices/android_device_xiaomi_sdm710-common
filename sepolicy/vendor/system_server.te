@@ -1,0 +1,3 @@
+binder_call(system_server, vendor_glgps)
+
+allow system_server proc_wakelocks:file { getattr open read };

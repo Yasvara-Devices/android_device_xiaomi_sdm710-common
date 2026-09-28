@@ -1,0 +1,8 @@
+# NOTE: rw_dir_file() does not exist in InfinityX policy (only r_dir_file).
+# Expanded manually. Narrowed vs upstream: dir is read-only (nodes are
+# kernel-created, HALs only write file contents), files stay read-write.
+# This also satisfies the no-dir-write-on-sysfs neverallow.
+allow hal_lineage_health_default sysfs_battery_supply:dir r_dir_perms;
+allow hal_lineage_health_default sysfs_battery_supply:{ file lnk_file } rw_file_perms;
+allow hal_lineage_health_default sysfs_usb_supply:dir r_dir_perms;
+allow hal_lineage_health_default sysfs_usb_supply:{ file lnk_file } rw_file_perms;

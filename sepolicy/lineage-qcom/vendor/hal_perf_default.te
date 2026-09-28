@@ -1,0 +1,8 @@
+r_dir_file(hal_perf_default, hal_power_default)
+
+# NOTE: rw_dir_file() does not exist in InfinityX policy (only r_dir_file).
+# Expanded manually. Narrowed vs upstream: dir is read-only (nodes are
+# kernel-created, HALs only write file contents), files stay read-write.
+# This also satisfies the no-dir-write-on-sysfs neverallow.
+allow hal_perf_default proc_sched:dir r_dir_perms;
+allow hal_perf_default proc_sched:{ file lnk_file } rw_file_perms;

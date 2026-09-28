@@ -1,0 +1,18 @@
+allow vendor_init proc_sysctl_autogroup:file w_file_perms;
+allow vendor_init proc_sysctl_schedboost:file w_file_perms;
+allow vendor_init proc_watermark_scale_factor:file w_file_perms;
+
+get_prop(vendor_init, persist_debug_prop)
+set_prop(vendor_init, vendor_camera_prop)
+set_prop(vendor_init, vendor_dpps_prop)
+set_prop(vendor_init, vendor_fingerprint_prop)
+set_prop(vendor_init, vendor_ssr_prop)
+set_prop(vendor_init, vendor_video_prop)
+
+# Boot-time debug/tracing props (audit-driven)
+set_prop(vendor_init, logpersistd_logging_prop)
+# NOTE: vendor_init also tries to set persist traced_* debug props, but the
+# traced_*_prop types are not visible to vendor policy (treble boundary) and
+# upstream neverallows vendor_init to touch them, so they can neither be
+# allowed nor silenced from here. The failures are harmless (traced falls
+# back to defaults) and remain as 2 lines of boot log noise.

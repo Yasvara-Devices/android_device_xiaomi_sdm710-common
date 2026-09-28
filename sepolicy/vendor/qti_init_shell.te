@@ -1,0 +1,2 @@
+# Sensor init script (init.qcom.sensors.sh) chmod/chown of /data/vendor/sensors (audit-driven)
+allow qti_init_shell sensors_vendor_data_file:dir search;

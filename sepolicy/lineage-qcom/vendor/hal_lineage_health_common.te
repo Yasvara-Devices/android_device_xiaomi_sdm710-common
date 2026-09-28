@@ -1,0 +1,8 @@
+# Lineage health HAL domain policy. Vendored from
+# device/lineage/sepolicy/common/vendor/hal_lineage_health_default.te
+# (not included on InfinityX). Types are declared in dynamic/dontaudit.te.
+hal_server_domain(hal_lineage_health_default, hal_lineage_health)
+
+init_daemon_domain(hal_lineage_health_default)
+
+binder_call(hal_lineage_health_default, servicemanager)

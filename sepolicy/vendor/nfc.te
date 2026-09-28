@@ -1,0 +1,4 @@
+# NFC stack probe of its vendor data dir (audit-driven).
+# NOTE: lives in vendor policy (not system_ext) because nfc_vendor_data_file
+# is a vendor type, invisible across the treble boundary.
+allow nfc nfc_vendor_data_file:dir search;

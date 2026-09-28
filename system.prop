@@ -1,0 +1,11 @@
+# Camera
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.aperture,org.lineageos.aperture.dev
+
+# Fwk detect
+ro.vendor.qti.va_aosp.support=1
+
+# Media
+media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+
+# RIL
+DEVICE_PROVISIONED=1

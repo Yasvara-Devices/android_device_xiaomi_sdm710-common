@@ -1,0 +1,2 @@
+# hal_attribute_lineage(mlipay) removed: Lineage-only macro, absent in
+# InfinityX, and the mlipay HAL is dropped.

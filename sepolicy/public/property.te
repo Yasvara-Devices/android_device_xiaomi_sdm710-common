@@ -1,0 +1,7 @@
+vendor_public_prop(deviceid_prop)
+
+# NOTE: vendor_fm_radio_app_prop, xtra_control_prop and
+# vendor_persist_camera_prop are intentionally NOT declared here; they come
+# from device/lineage/sepolicy/common (public + vendor) which is included via
+# BoardConfigCommon.mk. Declaring them again would collide
+# at link time.

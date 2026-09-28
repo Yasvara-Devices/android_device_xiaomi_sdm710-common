@@ -1,0 +1,2 @@
+# USB HAL needs UDC state for gadget/role handling (audit-driven)
+allow hal_usb_qti sysfs_udc:dir search;

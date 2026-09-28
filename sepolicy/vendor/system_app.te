@@ -1,0 +1,12 @@
+# Ram info
+allow system_app proc_pagetypeinfo:file { open read getattr };
+allow system_app proc_vmallocinfo:file { open read getattr };
+allow system_app sysfs_zram:dir search;
+allow system_app sysfs_zram:file { open read getattr };
+
+get_prop(system_app, qemu_hw_prop)
+
+# Battery supply sysfs probe (audit-driven).
+# NOTE: lives in vendor policy (not system_ext) because sysfs_battery_supply
+# is not visible across the treble boundary.
+allow system_app sysfs_battery_supply:dir search;

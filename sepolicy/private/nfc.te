@@ -1,0 +1,2 @@
+# MOVED to vendor/nfc.te: nfc_vendor_data_file is a vendor type, invisible
+# to system_ext policy across the treble boundary.

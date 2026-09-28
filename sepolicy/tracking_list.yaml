@@ -1,0 +1,11 @@
+# grus Treble labeling tracking list (legacy blobs that cannot be
+# relabeled properly; see system/sepolicy/tests/treble_labeling_tests.md).
+# PowerOffAlarm.apk + ims.apk are platform-signed QTI prebuilts installed to
+# platform partitions but labeled by legacy-um vendor seapp_contexts with
+# non-coredomain vendor domains. Moving/re-signing them would break their
+# platform permissions, so they are tracked here instead.
+platform_apps_in_vendor_seapp_contexts:
+  - apk: PowerOffAlarm.apk
+    bug: 1
+  - apk: ims.apk
+    bug: 1
