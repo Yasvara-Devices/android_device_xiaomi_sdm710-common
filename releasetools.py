@@ -19,6 +19,11 @@ import re
 
 def FullOTA_InstallEnd(info):
   OTA_InstallEnd(info)
+  # A full install may come from another ROM. Its aconfig storage records in
+  # /metadata survive a data format and make aconfigd skip rebuilding the
+  # system flag files, so system_server fails on unknown flags. Drop them;
+  # aconfigd recreates the storage on the next boot.
+  info.script.AppendExtra('run_program("/system/bin/sh", "-c", "grep -q \' /metadata \' /proc/mounts || mount /metadata; rm -rf /metadata/aconfig");')
   return
 
 def IncrementalOTA_InstallEnd(info):
